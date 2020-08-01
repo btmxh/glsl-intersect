@@ -11,7 +11,7 @@
 float rayPlane(vec3 rayOrigin, vec3 rayDir, vec3 pointOnPlane, vec3 planeNormal, float epsilon) {
     float denom = dot(planeNormal, rayDir); 
     if (abs(denom) > epsilon) { 
-        return dot(planeOffset - pointOnPlane, planeNormal) / denom; 
+        return dot(pointOnPlane - rayOrigin, planeNormal) / denom;
     }
 
     return -1.0; 

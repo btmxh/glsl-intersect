@@ -9,7 +9,7 @@
 //
 
 bool rayAABB(vec3 rayOrigin, vec3 rayDir, vec3 boxMin, vec3 boxMax, out vec2 result) {
-    rayInvDir = 1.0 / rayDir;
+    vec3 rayInvDir = 1.0 / rayDir;
     vec3 tbot = rayInvDir * (boxMin - rayOrigin);
     vec3 ttop = rayInvDir * (boxMax - rayOrigin);
     vec3 tmin = min(ttop, tbot);

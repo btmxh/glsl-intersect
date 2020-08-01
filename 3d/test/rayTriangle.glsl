@@ -27,7 +27,10 @@ bool testRayTriangle(vec3 rayOrigin, vec3 rayDir, vec3 v0, vec3 v1, vec3 v2, flo
     vec3 qvec = cross(tvec, e1);
     float v = invDet * dot(rayDir, qvec);
 
-    return v >= 0.0 && u + v <= 1.0
+    if(v < 0.0 || u + v > 1.0)
+        return false;
+
+    return dot(e2, qvec) * invDet >= epsilon;
 }
 
 //Default epsilon = 1e-6

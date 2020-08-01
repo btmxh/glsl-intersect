@@ -14,7 +14,7 @@ float rayCullTriangle(vec3 rayOrigin, vec3 rayDir, vec3 v0, vec3 v1, vec3 v2, fl
     vec3 pvec = cross(rayDir, e2);
     float det = dot(e1, pvec);
 
-    if(det < epsilon)
+    if(det <= epsilon)
         return -1.0;
 
     vec3 tvec = rayOrigin - v0;
@@ -25,7 +25,6 @@ float rayCullTriangle(vec3 rayOrigin, vec3 rayDir, vec3 v0, vec3 v1, vec3 v2, fl
 
     vec3 qvec = cross(tvec, e1);
     float v = dot(rayDir, qvec);
-
     if(v < 0.0 || u + v > det)
         return -1.0;
 

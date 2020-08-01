@@ -11,8 +11,8 @@ bool raySphere(vec3 rayOrigin, vec3 rayDir, vec3 sphereCenter, float sphereRadiu
     float sphereRadius2 = sphereRadius * sphereRadius;
     vec3 lvec = sphereCenter - rayOrigin;
     float tca = dot(lvec, rayDir);
-    float d2 = dot(lvec) - ldotdir * ldotdir;
-    if(d2 >= sphereRadius2)   return false;
+    float d2 = dot(lvec, lvec) - tca * tca;
+    if(d2 > sphereRadius2)   return false;
     float thc = sqrt(sphereRadius2 - d2);
     float t0 = tca - thc;
     float t1 = tca + thc;

@@ -14,8 +14,11 @@ bool testRayAABB(vec3 rayOrigin, vec3 rayDir, vec3 boxMin, vec3 boxMax) {
     vec3 ttop = rayInvDir * (boxMax - rayOrigin);
     vec3 tmin = min(ttop, tbot);
     vec3 tmax = max(ttop, tbot);
-    vec2 t = min(tmax.xx, tmax.yz);
-    return min(t.x, t.y) > max(t0, 0.0);
+    vec2 t = max(tmin.xx, tmin.yz);
+    float t0 = max(t.x, t.y);
+    t = min(tmax.xx, tmax.yz);
+    float t1 = min(t.x, t.y);
+    return t1 > max(t0, 0.0);
 }
 
 #pragma glslify: export(testRayAABB)

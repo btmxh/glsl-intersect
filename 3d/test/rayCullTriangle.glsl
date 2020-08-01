@@ -26,7 +26,11 @@ bool testRayCullTriangle(vec3 rayOrigin, vec3 rayDir, vec3 v0, vec3 v1, vec3 v2,
     vec3 qvec = cross(tvec, e1);
     float v = dot(rayDir, qvec);
 
-    return v >= 0.0 && u + v < det;
+    if(v < 0.0 || u + v > det) return false;
+
+    float invDet = 1.0f / det;
+    float t = dot(e2, qvec) * invDet;
+    return t >= epsilon;
 }
 
 //Default epsilon = 1e-6

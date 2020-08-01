@@ -10,7 +10,7 @@
 
 bool testRayPlane(vec3 rayOrigin, vec3 rayDir, vec3 pointOnPlane, vec3 planeNormal, float epsilon) {
     float denom = dot(planeNormal, rayDir); 
-    return abs(denom) > epsilon && dot(planeOffset - pointOnPlane, planeNormal) / denom >= 0;
+    return abs(denom) > epsilon && dot(rayOrigin, planeNormal) / denom <= 0;
 }
 
 //Default epsilon = 1e-6
