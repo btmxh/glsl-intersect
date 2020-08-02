@@ -9,7 +9,7 @@ GLSL Intersection Functions for Ray Tracing. Can be required from [glslify](http
 When using [glslify](http://github.com/chrisdickinson/glslify), you can include the intersecion functions like so:
 ``` glsl
 
-#pragma glslify: rayBox = require(glsl-intersect/3d/intersection/rayAABB)
+#pragma glslify: rayBox = require('glsl-intersect/3d/intersection/rayAABB')
 
 void main() {
   vec2 result;
