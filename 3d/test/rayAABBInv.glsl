@@ -1,0 +1,20 @@
+//
+// 3D Ray-AABB Intersection Test for GLSL 
+// Reference: https://www.reddit.com/r/opengl/comments/8ntzz5/fast_glsl_ray_box_intersection/
+// Version: 2020-08-01
+//
+// Copyright (c) 2020 Ngo Duy Anh. All rights reserved.
+// Distributed under the MIT license. See LICENSE file.
+// https://github.com/ngoduyanh/glsl-intersect
+//
+
+bool testRayAABBInv(vec3 rayOrigin, vec3 rayInvDir, vec3 boxMin, vec3 boxMax) {
+    vec3 tbot = rayInvDir * (boxMin - rayOrigin);
+    vec3 ttop = rayInvDir * (boxMax - rayOrigin);
+    vec3 tmin = min(ttop, tbot);
+    vec3 tmax = max(ttop, tbot);
+    vec2 t = min(tmax.xx, tmax.yz);
+    return min(t.x, t.y) > max(t0, 0.0);
+}
+
+#pragma glslify: export(testRayAABBInv)

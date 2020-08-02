@@ -1,6 +1,6 @@
 {
   "name": "glsl-intersect",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "GLSL Intersection Functions for Ray Tracing. Can be required from glslify.",
   "main": "index.js",
   "scripts": {
