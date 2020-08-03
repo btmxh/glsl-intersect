@@ -18,7 +18,7 @@ float rayPlane(vec3 rayOrigin, vec3 rayDir, vec3 pointOnPlane, vec3 planeNormal,
 }
 
 //Default epsilon = 1e-6
-bool rayPlane(vec3 rayOrigin, vec3 rayDir, vec3 pointOnPlane, vec3 planeNormal) {
+float rayPlane(vec3 rayOrigin, vec3 rayDir, vec3 pointOnPlane, vec3 planeNormal) {
     return rayPlane(rayOrigin, rayDir, pointOnPlane, planeNormal, 1e-6);
 }
 

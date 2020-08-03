@@ -32,7 +32,7 @@ float rayCullTriangle(vec3 rayOrigin, vec3 rayDir, vec3 v0, vec3 v1, vec3 v2, fl
 }
 
 float rayCullTriangle(vec3 rayOrigin, vec3 rayDir, vec3 v0, vec3 v1, vec3 v2) {
-    rayCullTriangle(rayOrigin, rayDir, v0, v1, v2, 1e-6);
+    return rayCullTriangle(rayOrigin, rayDir, v0, v1, v2, 1e-6);
 }
 
 #pragma glslify: export(rayCullTriangle)

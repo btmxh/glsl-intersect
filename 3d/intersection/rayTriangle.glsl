@@ -34,7 +34,7 @@ float rayTriangle(vec3 rayOrigin, vec3 rayDir, vec3 v0, vec3 v1, vec3 v2, float 
 }
 
 //Default epsilon = 1e-6
-bool rayTriangle(vec3 rayOrigin, vec3 rayDir, vec3 v0, vec3 v1, vec3 v2) {
+float rayTriangle(vec3 rayOrigin, vec3 rayDir, vec3 v0, vec3 v1, vec3 v2) {
     return rayTriangle(rayOrigin, rayDir, v0, v1, v2, 1e-6);
 }
 

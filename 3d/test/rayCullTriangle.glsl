@@ -35,7 +35,7 @@ bool testRayCullTriangle(vec3 rayOrigin, vec3 rayDir, vec3 v0, vec3 v1, vec3 v2,
 
 //Default epsilon = 1e-6
 bool testRayCullTriangle(vec3 rayOrigin, vec3 rayDir, vec3 v0, vec3 v1, vec3 v2) {
-    testRayCullTriangle(rayOrigin, rayDir, v0, v1, v2, 1e-6);
+    return testRayCullTriangle(rayOrigin, rayDir, v0, v1, v2, 1e-6);
 }
 
 #pragma glslify: export(testRayCullTriangle)
